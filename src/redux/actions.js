@@ -1,6 +1,6 @@
 export const ADD_TODO = "ADD_TODO";
 
-function addTOdo(todo) {
+export function addTodo(todo) {
   return {
     type: ADD_TODO,
     todo,
