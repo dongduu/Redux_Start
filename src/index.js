@@ -4,24 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./redux/store";
-import { addTodo } from "./redux/actions";
+import { addTodo, completeTodo, showComplete } from "./redux/actions";
 
-// store.subscribe(() => {
-//   console.log(store.getState());
-// });
-const unsubscribe = store.subscribe(() => {
+store.subscribe(() => {
   console.log(store.getState());
 });
 
-store.dispatch(addTodo("coding"));
-store.dispatch(addTodo("read book"));
-store.dispatch(addTodo("eat"));
-
-unsubscribe();
-
-store.dispatch(addTodo("coding"));
-store.dispatch(addTodo("read book"));
-store.dispatch(addTodo("eat"));
+store.dispatch(addTodo("할 일"));
+store.dispatch(completeTodo(0));
+store.dispatch(showComplete());
 
 ReactDOM.render(
   <React.StrictMode>
